@@ -17,40 +17,64 @@ void keyboard(unsigned char key, int x, int y);
 void keyboard_special(int key, int x, int y);
 void mouse_wheel(int wheel, int direction, int x, int y);
 void reshape(int w, int h);
-void drawElephant();
 void display(void);
 void timer(int value);
 void Initialize();
 int main(int argc, char** argv);
+void mouseMotion(int x, int y);
+void mouseButton(int button, int state, int x, int y);
 
-//globals
-unsigned int elefante;
-float rot_ele;
+//======================================================================================================
+// Globals
+//======================================================================================================
 Objeto objeto;
-int x = 0;
+int resposta = 0;
+string nomeObjeto;
+int mouseX = 0;
+int mouseY = 0;
+bool isDragging = false;
+bool isRotating = false;
 
 //======================================================================================================
 // Botões de movimento
 //======================================================================================================
 void keyboard(unsigned char key, int x, int y) {
     switch (key) {
-    case '0':
+    case '1':
         if (glIsEnabled(GL_LIGHT0))
             glDisable(GL_LIGHT0);
         else
             glEnable(GL_LIGHT0);
         break;
-    case '1':
+    case '2':
         if (glIsEnabled(GL_LIGHT1))
             glDisable(GL_LIGHT1);
         else
             glEnable(GL_LIGHT1);
         break;
-    case '2':
+    case '3':
         if (glIsEnabled(GL_LIGHT2))
             glDisable(GL_LIGHT2);
         else
             glEnable(GL_LIGHT2);
+        break;
+    case 's':
+        rotateObject(objeto, 1.0, 'x');
+        break;
+    case 'w':
+        rotateObject(objeto, -1.0, 'x');
+        break;
+    case 'd':
+        rotateObject(objeto, 1.0, 'y');
+        break;
+    case 'a':
+        rotateObject(objeto, -1.0, 'y');
+        break;
+    case 'q':
+        rotateObject(objeto, 1.0, 'z');
+        break;
+    case 'e':
+        rotateObject(objeto, -1.0, 'z');
         break;
     case 27:
         exit(0);
@@ -96,7 +120,47 @@ void mouse_wheel(int wheel, int direction, int x, int y) {
         scaleObject(objeto, 0.9); // Decrease scale factor by 10%
     }
 }
-
+void mouseButton(int button, int state, int x, int y) {
+    if (button == GLUT_LEFT_BUTTON) {
+        if (state == GLUT_DOWN) {
+            isDragging = true;
+            mouseX = x;
+            mouseY = y;
+        }
+        else if (state == GLUT_UP) {
+            isDragging = false;
+        }
+    }
+    if (button == GLUT_RIGHT_BUTTON) {
+        if (state == GLUT_DOWN) {
+            isRotating = true;
+            mouseX = x;
+            mouseY = y;
+        }
+        else if (state == GLUT_UP) {
+            isRotating = false;
+        }
+    }
+}
+void mouseMotion(int x, int y) {
+    if (isDragging) {
+        int deltaX = x - mouseX; // Adjust the scaling factor as needed
+        int deltaY = y - mouseY; // Adjust the scaling factor as needed
+        moveObject(objeto, deltaX, -deltaY, 0); // Invert deltaY for y-axis movement
+        mouseX = x;
+        mouseY = y;
+        glutPostRedisplay();
+    }
+    else if (isRotating) {
+        int deltaX = x - mouseX;
+        int deltaY = y - mouseY;
+        rotateObject(objeto, deltaX * 0.5, 'y'); // Adjust rotation speed as needed
+        rotateObject(objeto, deltaY * 0.5, 'x'); // Adjust rotation speed as needed
+        mouseX = x;
+        mouseY = y;
+        glutPostRedisplay();
+    }
+}
 //======================================================================================================
 // Funçoes de modelagem
 //======================================================================================================
@@ -109,23 +173,6 @@ void reshape(int w, int h)
 
     glMatrixMode(GL_MODELVIEW);
 }
-void drawElephant()
-{
-    GLfloat cor_verde[] = { 0.0, 1.0, 0.0, 1.0 };
-    GLfloat cor_branco[] = { 1.0, 1.0, 1.0, 1.0 };
-    glMaterialfv(GL_FRONT, GL_DIFFUSE, cor_verde);
-    glMaterialfv(GL_FRONT, GL_SPECULAR, cor_branco);
-    glMaterialf(GL_FRONT, GL_SHININESS, 100);
-
-    glPushMatrix();
-    glTranslatef(0, -40.00, -105);
-    glColor3f(1.0, 0.23, 0.27);
-    glRotatef(rot_ele, 0, 1, 0);
-    glCallList(elefante);
-    glPopMatrix();
-    rot_ele = rot_ele + 0.6;
-    if (rot_ele > 360) rot_ele = rot_ele - 360;
-}
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -134,7 +181,12 @@ void display(void)
     glEnable(GL_LIGHTING);  // Enable lighting
     glEnable(GL_DEPTH_TEST); // Enable depth testing
     glTranslatef(0.0, -40.0, -105.0); // Adjust initial position of the object
-    glRotatef(rot_ele, 0.0, 1.0, 0.0); // Rotate the object based on rot_ele
+
+    GLfloat cor_verde[] = { 1.0, 1.0, 0.0, 1.0 };
+    GLfloat cor_branco[] = { 1.0, 1.0, 1.0, 1.0 };
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, cor_verde);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, cor_branco);
+    glMaterialf(GL_FRONT, GL_SHININESS, 100);
 
     // Iterate over each face of the loaded model
     for (const auto& face : objeto.faces)
@@ -167,33 +219,36 @@ void Initialize() {
     glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);
 
     // Enable lighting
+    glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
     glEnable(GL_LIGHTING);
-
+    
+    double valorAmbiente = 0.8;
+    double valorDifusa = 1.0;
     // Set up light 0
-    GLfloat luz_ambiente0[] = { 0.2, 0.2, 0.2, 1.0 };
-    GLfloat luz_difusa0[] = { 0.8, 0.8, 0.8, 1.0 };
+    GLfloat luz_ambiente0[] = { valorAmbiente, valorAmbiente, valorAmbiente, 1.0 };
+    GLfloat luz_difusa0[] = { valorDifusa, valorDifusa, valorDifusa, 1.0 };
     GLfloat luz_especular0[] = { 1.0, 1.0, 1.0, 1.0 };
-    GLfloat posicao_luz0[] = { 1.0, 0.0, 0.0, 1.0 }; // Example position
+    GLfloat posicao_luz0[] = { 0.0, 0.0, 1.0, 0.0 }; 
     glLightfv(GL_LIGHT0, GL_AMBIENT, luz_ambiente0);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, luz_difusa0);
     glLightfv(GL_LIGHT0, GL_SPECULAR, luz_especular0);
     glLightfv(GL_LIGHT0, GL_POSITION, posicao_luz0);
 
     // Set up light 1
-    GLfloat luz_ambiente1[] = { 0.2, 0.2, 0.2, 1.0 };
-    GLfloat luz_difusa1[] = { 0.8, 0.8, 0.8, 1.0 };
+    GLfloat luz_ambiente1[] = { valorAmbiente, valorAmbiente, valorAmbiente, 1.0 };
+    GLfloat luz_difusa1[] = { valorDifusa, valorDifusa, valorDifusa, 1.0 };
     GLfloat luz_especular1[] = { 1.0, 1.0, 1.0, 1.0 };
-    GLfloat posicao_luz1[] = { -1.0, 0.0, 0.0, 1.0 }; // Example position
+    GLfloat posicao_luz1[] = { 0.0, 0.0, -1.0, 0.0 }; 
     glLightfv(GL_LIGHT1, GL_AMBIENT, luz_ambiente1);
     glLightfv(GL_LIGHT1, GL_DIFFUSE, luz_difusa1);
     glLightfv(GL_LIGHT1, GL_SPECULAR, luz_especular1);
     glLightfv(GL_LIGHT1, GL_POSITION, posicao_luz1);
 
     // Set up light 2
-    GLfloat luz_ambiente2[] = { 0.2, 0.2, 0.2, 1.0 };
-    GLfloat luz_difusa2[] = { 0.8, 0.8, 0.8, 1.0 };
+    GLfloat luz_ambiente2[] = { valorAmbiente, valorAmbiente, valorAmbiente, 1.0 };
+    GLfloat luz_difusa2[] = { valorDifusa, valorDifusa, valorDifusa, 1.0 }; 
     GLfloat luz_especular2[] = { 1.0, 1.0, 1.0, 1.0 };
-    GLfloat posicao_luz2[] = { 0.0, 1.0, 0.0, 1.0 }; // Example position
+    GLfloat posicao_luz2[] = { 0.0, 1.0, 0.0, 0.0 }; 
     glLightfv(GL_LIGHT2, GL_AMBIENT, luz_ambiente2);
     glLightfv(GL_LIGHT2, GL_DIFFUSE, luz_difusa2);
     glLightfv(GL_LIGHT2, GL_SPECULAR, luz_especular2);
@@ -204,6 +259,28 @@ void Initialize() {
 }
 int main(int argc, char** argv)
 {
+    cout << "Qual objeto voce quer renderizar?\n";
+    cout << "0 - Elefante\n1 - Casa\n2 - Carro\n3 - Radar\n4 - Urso\n";
+
+    cin >> resposta;
+    switch (resposta) {
+    case 0:
+        nomeObjeto = "elepham";
+        break;
+    case 1:
+        nomeObjeto = "mba1";
+        break;
+    case 2:
+        nomeObjeto = "porsche";
+        break;
+    case 3:
+        nomeObjeto = "radar";
+        break;
+    case 4:
+        nomeObjeto = "teddy";
+        break;
+    }
+
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(800, 450);
@@ -213,15 +290,21 @@ int main(int argc, char** argv)
     glutKeyboardFunc(keyboard);
     glutMouseWheelFunc(mouse_wheel);
     glutSpecialFunc(keyboard_special);
+    glutMouseFunc(mouseButton);
+    glutMotionFunc(mouseMotion);
 
     glutDisplayFunc(display);
 
 
     glutTimerFunc(10, timer, 0);
     Initialize();
-    loadObj(objeto, "data/elepham.obj");
+
+    
+
+    loadObj(objeto, "data/" + nomeObjeto + ".obj");
     glutMainLoop();
     return 0;
 
 }
+
 

@@ -1,4 +1,4 @@
-#ifndef FUNCTIONS_H
+ï»¿#ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
 #include <iostream>
@@ -10,9 +10,10 @@
 #include <sstream>
 #include <vector>
 using namespace std;
+# define PI  3.14159265358979323846 
 
 //======================================================================================================
-// Valores do cubo
+//  Valores do cubo
 //======================================================================================================
 struct Normal {
     double x, y, z;
@@ -48,7 +49,7 @@ struct Objeto {
 };
 
 //======================================================================================================
-// Funções
+//  FunÃ§Ãµes
 //======================================================================================================
 void loadObj(Objeto& objeto, string fname);
 std::tuple<double, double, double> calculo_centro(const Objeto& cubo);
@@ -58,7 +59,7 @@ std::vector<std::string> split(const std::string& s, char delimiter);
 void calcularNormaisVertices(vector<Vertice>& vertices, const vector<Face>& faces);
 
 //======================================================================================================
-// Calcular Normais
+//  Calcular Normais
 //======================================================================================================
 void calcularNormaisVertices(vector<Vertice>& vertices, const vector<Face>& faces) {
     // Initialize vertex normals to zero vectors
@@ -114,7 +115,7 @@ void loadObj(Objeto& objeto, string fname)
 {
     ifstream arquivo(fname);
     if (!arquivo.is_open()) {
-        cout << "Arquivo não encontrado: " << fname << endl;
+        cout << "Arquivo nÃ£o encontrado: " << fname << endl;
         exit(1);
     }
 
@@ -164,10 +165,10 @@ void loadObj(Objeto& objeto, string fname)
     }
 
     // Certifique-se de que os vetores estejam populados corretamente
-    cout << "Número de vértices: " << vertices.size() << endl;
-    cout << "Número de normais: " << normais.size() << endl;
-    cout << "Número de texturas: " << texturas.size() << endl;
-    cout << "Número de faces: " << faces.size() << endl;
+    cout << "NÃºmero de vÃ©rtices: " << vertices.size() << endl;
+    cout << "NÃºmero de normais: " << normais.size() << endl;
+    cout << "NÃºmero de texturas: " << texturas.size() << endl;
+    cout << "NÃºmero de faces: " << faces.size() << endl;
 
     // Atribua os vetores ao objeto apenas se tudo estiver correto
     objeto.vertices = vertices;
@@ -179,7 +180,7 @@ void loadObj(Objeto& objeto, string fname)
 }
 
 //======================================================================================================
-// Calculo do centro
+//  Calculo do centro
 //======================================================================================================
 std::tuple<double, double, double> calculo_centro(const Objeto& cubo) {
     double centro_x = 0.0;
@@ -200,7 +201,7 @@ std::tuple<double, double, double> calculo_centro(const Objeto& cubo) {
 }
 
 //======================================================================================================
-// Escalar objeto
+//  Escalar objeto
 //======================================================================================================
 void scaleObject(Objeto& objeto, double scaleFactor)
 {
@@ -217,24 +218,70 @@ void scaleObject(Objeto& objeto, double scaleFactor)
 }
 
 //======================================================================================================
-// Movimentação do cubo
+//  MovimentaÃ§Ã£o do cubo
 //======================================================================================================
 void moveObject(Objeto& objeto, double deslocamento_x, double deslocamento_y, double deslocamento_z) {
     objeto.posicao_x += deslocamento_x;
     objeto.posicao_y += deslocamento_y;
     objeto.posicao_z += deslocamento_z;
 
-    // Iterar sobre cada vértice do cubo
+    // Iterar sobre cada vÃ©rtice do cubo
     for (int i = 0; i < objeto.vertices.size(); i++) {
-        // Atualizar as coordenadas dos vértices nos eixos x, y e z
+        // Atualizar as coordenadas dos vÃ©rtices nos eixos x, y e z
         objeto.vertices[i].x += deslocamento_x;
         objeto.vertices[i].y += deslocamento_y;
         objeto.vertices[i].z += deslocamento_z;
     }
 }
 
+//======================================================================================================
+//  Rotacionar o cubo
+//======================================================================================================
+void rotateObject(Objeto& cubo, double angulo, char eixo) {
+    angulo = angulo * PI / 180.0;
+
+    double centro_x, centro_y, centro_z;
+    std::tie(centro_x, centro_y, centro_z) = calculo_centro(cubo);
 
 
+    for (int i = 0; i < cubo.vertices.size(); i++) {
+        double x = cubo.vertices[i].x;
+        double y = cubo.vertices[i].y;
+        double z = cubo.vertices[i].z;
+
+        x -= centro_x;
+        y -= centro_y;
+        z -= centro_z;
+
+
+        if (eixo == 'x') {
+            double new_y = y * cos(angulo) - z * sin(angulo);
+            double new_z = y * sin(angulo) + z * cos(angulo);
+            y = new_y;
+            z = new_z;
+        }
+        else if (eixo == 'y') {
+            double new_x = x * cos(angulo) + z * sin(angulo);
+            double new_z = -x * sin(angulo) + z * cos(angulo);
+            x = new_x;
+            z = new_z;
+        }
+        else if (eixo == 'z') {	
+            double new_x = x * cos(angulo) - y * sin(angulo);
+            double new_y = x * sin(angulo) + y * cos(angulo);
+            x = new_x;
+            y = new_y;
+        }
+
+        cubo.vertices[i].x = x + centro_x;
+        cubo.vertices[i].y = y + centro_y;
+        cubo.vertices[i].z = z + centro_z;
+    }
+}
+
+//======================================================================================================
+//  FunÃ§Ãµes auxiliares 
+//======================================================================================================
 std::vector<std::string> split(const std::string& s, char delimiter) {
     std::vector<std::string> tokens;
     std::stringstream ss(s);
