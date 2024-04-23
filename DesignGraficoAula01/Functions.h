@@ -22,13 +22,18 @@ struct Normal {
 struct Vertice {
     double x, y, z;
     vector<Normal> normais;
+    // Construtor que inicializa as coordenadas (x, y, z) do vértice
     Vertice(double _x, double _y, double _z) : x(_x), y(_y), z(_z) {}
-    Vertice(const vector<Normal> _normais) : normais(_normais) {}
+
+    // Construtor que inicializa o vetor de normais do vértice
+    Vertice(const vector<Normal>& _normais) : normais(_normais) {}
 };
 struct Face {
     double v1, v2, v3;
+    double n1, n2, n3;
     double t1, t2, t3;
-    Face(int _v1, int _v2, int _v3, int _t1, int _t2, int _t3) : v1(_v1), v2(_v2), v3(_v3), t1(_t1), t2(_t2), t3(_t3) {}
+    Face(int _v1, int _v2, int _v3, int _n1, int _n2, int _n3, int _t1, int _t2, int _t3)
+        : v1(_v1), v2(_v2), v3(_v3), n1(_n1), n2(_n2), n3(_n3), t1(_t1), t2(_t2), t3(_t3) {}
 };
 struct Textura {
     double u, v;
@@ -38,7 +43,6 @@ struct Objeto {
     vector<Vertice> vertices;
     vector<Textura> texturas;
     vector<Face> faces;
-    vector<Normal> normais;
 
     double tamanhoLado;
     double posicao_x, posicao_y, posicao_z;
@@ -61,52 +65,66 @@ void calcularNormaisVertices(vector<Vertice>& vertices, const vector<Face>& face
 //======================================================================================================
 //  Calcular Normais
 //======================================================================================================
-void calcularNormaisVertices(vector<Vertice>& vertices, const vector<Face>& faces) {
-    // Initialize vertex normals to zero vectors
-    for (auto& vertice : vertices) {
-        vertice.normais.clear(); // Clear existing normals
-    }
+void calcularNormaisVertices(vector<Vertice>& vertices, const vector<Face>& faces, const vector<Normal>& normaisObjeto) {
+    // Verificar se o vetor de normais do objeto está vazio
+    if (normaisObjeto.empty()) {
+        cout << "não possui normal, utilizando as fórmulas\n";
 
-    // Calculate face normals and accumulate them into vertex normals
-    for (const auto& face : faces) {
-        // Calculate face normal
-        const Vertice& v1 = vertices[face.v1];
-        const Vertice& v2 = vertices[face.v2];
-        const Vertice& v3 = vertices[face.v3];
-        double edge1x = v2.x - v1.x;
-        double edge1y = v2.y - v1.y;
-        double edge1z = v2.z - v1.z;
-        double edge2x = v3.x - v1.x;
-        double edge2y = v3.y - v1.y;
-        double edge2z = v3.z - v1.z;
-        double nx = edge1y * edge2z - edge1z * edge2y;
-        double ny = edge1z * edge2x - edge1x * edge2z;
-        double nz = edge1x * edge2y - edge1y * edge2x;
+        // Calcular as normais de cada face e acumulá-las nos vértices
+        for (const auto& face : faces) {
+            // Calcular a normal da face
+            const Vertice& v1 = vertices[face.v1];
+            const Vertice& v2 = vertices[face.v2];
+            const Vertice& v3 = vertices[face.v3];
+            double edge1x = v2.x - v1.x;
+            double edge1y = v2.y - v1.y;
+            double edge1z = v2.z - v1.z;
+            double edge2x = v3.x - v1.x;
+            double edge2y = v3.y - v1.y;
+            double edge2z = v3.z - v1.z;
+            double nx = edge1y * edge2z - edge1z * edge2y;
+            double ny = edge1z * edge2x - edge1x * edge2z;
+            double nz = edge1x * edge2y - edge1y * edge2x;
 
-        // Add face normal to vertex normals
-        vertices[face.v1].normais.emplace_back(nx, ny, nz);
-        vertices[face.v2].normais.emplace_back(nx, ny, nz);
-        vertices[face.v3].normais.emplace_back(nx, ny, nz);
-    }
-
-    // Normalize vertex normals
-    for (auto& vertice : vertices) {
-        double totalX = 0.0, totalY = 0.0, totalZ = 0.0;
-        for (const auto& normal : vertice.normais) {
-            totalX += normal.x;
-            totalY += normal.y;
-            totalZ += normal.z;
+            // Adicionar a normal da face aos vértices
+            vertices[face.v1].normais.emplace_back(nx, ny, nz);
+            vertices[face.v2].normais.emplace_back(nx, ny, nz);
+            vertices[face.v3].normais.emplace_back(nx, ny, nz);
         }
-        double length = sqrt(totalX * totalX + totalY * totalY + totalZ * totalZ);
-        if (length > 0) {
-            for (auto& normal : vertice.normais) {
-                normal.x /= length;
-                normal.y /= length;
-                normal.z /= length;
+
+        // Normalizar as normais dos vértices
+        for (auto& vertice : vertices) {
+            double totalX = 0.0, totalY = 0.0, totalZ = 0.0;
+            for (const auto& normal : vertice.normais) {
+                totalX += normal.x;
+                totalY += normal.y;
+                totalZ += normal.z;
+            }
+            double length = sqrt(totalX * totalX + totalY * totalY + totalZ * totalZ);
+            if (length > 0) {
+                for (auto& normal : vertice.normais) {
+                    normal.x /= length;
+                    normal.y /= length;
+                    normal.z /= length;
+                }
             }
         }
     }
+    else {
+        cout << "Ja possui normal, Usando padrões\n";
+        // Se o vetor de normais do objeto não estiver vazio, usar as normais fornecidas
+        // Assumindo que o vetor de normaisObjeto possui a mesma quantidade de normais que vértices
+        for (const auto& face : faces) {
+            // Verificar se os índices de normais da face estão dentro do intervalo válido
+            vertices[face.v1].normais.emplace_back(normaisObjeto[face.n1]);
+            vertices[face.v2].normais.emplace_back(normaisObjeto[face.n2]);
+            vertices[face.v3].normais.emplace_back(normaisObjeto[face.n3]);
+            
+        }
+
+    }
 }
+
 
 //======================================================================================================
 // Carregar objeto
@@ -148,6 +166,8 @@ void loadObj(Objeto& objeto, string fname)
         else if (tipo == "f")
         {
             string v1, v2, v3;
+            int t1 = 0, t2 = 0, t3 = 0; 
+            int n1 = 0, n2 = 0, n3 = 0;
             arquivo >> v1 >> v2 >> v3;
             // Split each face line by '/' to extract vertex, texture coordinate, and normal indices
             vector<string> tokens1 = split(v1, '/');
@@ -159,8 +179,24 @@ void loadObj(Objeto& objeto, string fname)
             int v2_index = stoi(tokens2[0]) - 1;
             int v3_index = stoi(tokens3[0]) - 1;
 
+            if (tokens1.size() >= 2 && !tokens1[1].empty())
+            {
+                t1 = stoi(tokens1[1]) - 1;
+                t2 = stoi(tokens2[1]) - 1;
+                t3 = stoi(tokens3[1]) - 1;
+            }
+
+            // Verificar se há informações de normal
+            if (tokens1.size() >= 3 && !tokens1[2].empty())
+            {
+                n1 = stoi(tokens1[2]) - 1;
+                n2 = stoi(tokens2[2]) - 1;
+                n3 = stoi(tokens3[2]) - 1;
+            }
+
+            // Add the face to the faces vector, including normal indices
+            faces.emplace_back(v1_index, v2_index, v3_index, n1, n2, n3, t1, t2, t3);
             // Add the face to the faces vector
-            faces.emplace_back(v1_index, v2_index, v3_index, 0, 0, 0);
         }
     }
 
@@ -174,9 +210,12 @@ void loadObj(Objeto& objeto, string fname)
     objeto.vertices = vertices;
     objeto.texturas = texturas;
     objeto.faces = faces;
-    objeto.normais = normais;
 
-    calcularNormaisVertices(objeto.vertices, objeto.faces);
+
+
+    calcularNormaisVertices(objeto.vertices, objeto.faces, normais);
+    
+
 }
 
 //======================================================================================================
