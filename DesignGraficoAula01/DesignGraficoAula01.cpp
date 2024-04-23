@@ -58,6 +58,12 @@ void keyboard(unsigned char key, int x, int y) {
         else
             glEnable(GL_LIGHT2);
         break;
+    case '4':
+        if (glIsEnabled(GL_LIGHT3))
+            glDisable(GL_LIGHT3);
+        else
+            glEnable(GL_LIGHT3);
+        break;
     case 's':
         rotateObject(objeto, 1.0, 'x');
         break;
@@ -215,11 +221,17 @@ void timer(int value) {
 }
 // Função responsável por configurar o ambiente OpenGL, definindo o sistema de coordenadas, a cor de fundo, e as luzes
 void Initialize() {
+    // Configura o ambiente de renderização OpenGL:
+    // Define a cor de limpeza da tela como preto,
     glClearColor(0.0, 0.0, 0.0, 0.0);
+    // define a matriz de projeção como uma projeção ortográfica,
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);
+
+    // habilita a visualização local do modelo de iluminação,
     glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
+    // ativa o cálculo de iluminação OpenGL.
     glEnable(GL_LIGHTING);
     
 
@@ -252,6 +264,17 @@ void Initialize() {
     glLightfv(GL_LIGHT2, GL_DIFFUSE, luz_difusa2);
     glLightfv(GL_LIGHT2, GL_SPECULAR, luz_especular2);
     glLightfv(GL_LIGHT2, GL_POSITION, posicao_luz2);
+
+    // Luz 4
+    GLfloat luz_ambiente3[] = { 0.8, 0.8, 0.8, 1.0 };
+    GLfloat luz_difusa3[] = { 1.0, 1.0, 1.0, 1.0 };
+    GLfloat luz_especular3[] = { 1.0, 1.0, 1.0, 1.0 };
+    GLfloat posicao_luz3[] = { 0.0, -1.0, 0.0, 0.0 };
+    glLightfv(GL_LIGHT3, GL_AMBIENT, luz_ambiente3);
+    glLightfv(GL_LIGHT3, GL_DIFFUSE, luz_difusa3);
+    glLightfv(GL_LIGHT3, GL_SPECULAR, luz_especular3);
+    glLightfv(GL_LIGHT3, GL_POSITION, posicao_luz3);
+
 
     // Luz 0 como padrão
     glEnable(GL_LIGHT0);
