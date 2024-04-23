@@ -164,6 +164,7 @@ void mouseMotion(int x, int y) {
 //======================================================================================================
 // Funçoes de modelagem
 //======================================================================================================
+// Função responsável por redefinir a visualização da cena quando ocorre uma alteração no tamanho da janela OpenGL
 void reshape(int w, int h)
 {
     glViewport(0, 0, w, h);
@@ -173,14 +174,15 @@ void reshape(int w, int h)
 
     glMatrixMode(GL_MODELVIEW);
 }
+// Função responsável por renderizar a cena na janela OpenGL
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
 
-    glEnable(GL_LIGHTING);  // Enable lighting
-    glEnable(GL_DEPTH_TEST); // Enable depth testing
-    glTranslatef(0.0, -40.0, -105.0); // Adjust initial position of the object
+    glEnable(GL_LIGHTING); 
+    glEnable(GL_DEPTH_TEST); 
+    glTranslatef(0.0, -40.0, -105.0); 
 
     GLfloat cor_verde[] = { 1.0, 1.0, 0.0, 1.0 };
     GLfloat cor_branco[] = { 1.0, 1.0, 1.0, 1.0 };
@@ -188,45 +190,42 @@ void display(void)
     glMaterialfv(GL_FRONT, GL_SPECULAR, cor_branco);
     glMaterialf(GL_FRONT, GL_SHININESS, 100);
 
-    // Iterate over each face of the loaded model
     for (const auto& face : objeto.faces)
     {
-        glBegin(GL_TRIANGLES); // Start drawing triangles
+        glBegin(GL_TRIANGLES);
 
-        // Render each vertex of the triangle with its normal
-        glNormal3f(objeto.vertices[face.v1].normais[0].x, objeto.vertices[face.v1].normais[0].y, objeto.vertices[face.v1].normais[0].z);
-        glVertex3f(objeto.vertices[face.v1].x, objeto.vertices[face.v1].y, objeto.vertices[face.v1].z);
+        glNormal3f(objeto.vertices[abs(face.v1)].normais[0].x, objeto.vertices[abs(face.v1)].normais[0].y, objeto.vertices[abs(face.v1)].normais[0].z);
+        glVertex3f(objeto.vertices[abs(face.v1)].x, objeto.vertices[abs(face.v1)].y, objeto.vertices[abs(face.v1)].z);
 
-        glNormal3f(objeto.vertices[face.v2].normais[0].x, objeto.vertices[face.v2].normais[0].y, objeto.vertices[face.v2].normais[0].z);
-        glVertex3f(objeto.vertices[face.v2].x, objeto.vertices[face.v2].y, objeto.vertices[face.v2].z);
+        glNormal3f(objeto.vertices[abs(face.v2)].normais[0].x, objeto.vertices[abs(face.v2)].normais[0].y, objeto.vertices[abs(face.v2)].normais[0].z);
+        glVertex3f(objeto.vertices[abs(face.v2)].x, objeto.vertices[abs(face.v2)].y, objeto.vertices[abs(face.v2)].z);
 
-        glNormal3f(objeto.vertices[face.v3].normais[0].x, objeto.vertices[face.v3].normais[0].y, objeto.vertices[face.v3].normais[0].z);
-        glVertex3f(objeto.vertices[face.v3].x, objeto.vertices[face.v3].y, objeto.vertices[face.v3].z);
+        glNormal3f(objeto.vertices[abs(face.v3)].normais[0].x, objeto.vertices[abs(face.v3)].normais[0].y, objeto.vertices[abs(face.v3)].normais[0].z);
+        glVertex3f(objeto.vertices[abs(face.v3)].x, objeto.vertices[abs(face.v3)].y, objeto.vertices[abs(face.v3)].z);
 
-        glEnd(); // End drawing triangles
+        glEnd();
     }
 
     glutSwapBuffers();
 }
+// Função responsável por atualizar periodicamente a exibição da cena OpenGL
 void timer(int value) {
     glutPostRedisplay();
     glutTimerFunc(10, timer, 0);
 }
+// Função responsável por configurar o ambiente OpenGL, definindo o sistema de coordenadas, a cor de fundo, e as luzes
 void Initialize() {
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);
-
-    // Enable lighting
     glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
     glEnable(GL_LIGHTING);
     
-    double valorAmbiente = 0.8;
-    double valorDifusa = 1.0;
-    // Set up light 0
-    GLfloat luz_ambiente0[] = { valorAmbiente, valorAmbiente, valorAmbiente, 1.0 };
-    GLfloat luz_difusa0[] = { valorDifusa, valorDifusa, valorDifusa, 1.0 };
+
+    // Luz 0
+    GLfloat luz_ambiente0[] = { 0.8, 0.8, 0.8, 1.0 };
+    GLfloat luz_difusa0[] = { 1.0, 1.0, 1.0, 1.0 };
     GLfloat luz_especular0[] = { 1.0, 1.0, 1.0, 1.0 };
     GLfloat posicao_luz0[] = { 0.0, 0.0, 1.0, 0.0 }; 
     glLightfv(GL_LIGHT0, GL_AMBIENT, luz_ambiente0);
@@ -234,9 +233,9 @@ void Initialize() {
     glLightfv(GL_LIGHT0, GL_SPECULAR, luz_especular0);
     glLightfv(GL_LIGHT0, GL_POSITION, posicao_luz0);
 
-    // Set up light 1
-    GLfloat luz_ambiente1[] = { valorAmbiente, valorAmbiente, valorAmbiente, 1.0 };
-    GLfloat luz_difusa1[] = { valorDifusa, valorDifusa, valorDifusa, 1.0 };
+    // Luz 2
+    GLfloat luz_ambiente1[] = { 0.8, 0.8, 0.8, 1.0 };
+    GLfloat luz_difusa1[] = { 1.0, 1.0, 1.0, 1.0 };
     GLfloat luz_especular1[] = { 1.0, 1.0, 1.0, 1.0 };
     GLfloat posicao_luz1[] = { 0.0, 0.0, -1.0, 0.0 }; 
     glLightfv(GL_LIGHT1, GL_AMBIENT, luz_ambiente1);
@@ -244,9 +243,9 @@ void Initialize() {
     glLightfv(GL_LIGHT1, GL_SPECULAR, luz_especular1);
     glLightfv(GL_LIGHT1, GL_POSITION, posicao_luz1);
 
-    // Set up light 2
-    GLfloat luz_ambiente2[] = { valorAmbiente, valorAmbiente, valorAmbiente, 1.0 };
-    GLfloat luz_difusa2[] = { valorDifusa, valorDifusa, valorDifusa, 1.0 }; 
+    // Luz 3
+    GLfloat luz_ambiente2[] = { 0.8, 0.8, 0.8, 1.0 };
+    GLfloat luz_difusa2[] = { 1.0, 1.0, 1.0, 1.0 }; 
     GLfloat luz_especular2[] = { 1.0, 1.0, 1.0, 1.0 };
     GLfloat posicao_luz2[] = { 0.0, 1.0, 0.0, 0.0 }; 
     glLightfv(GL_LIGHT2, GL_AMBIENT, luz_ambiente2);
@@ -254,54 +253,78 @@ void Initialize() {
     glLightfv(GL_LIGHT2, GL_SPECULAR, luz_especular2);
     glLightfv(GL_LIGHT2, GL_POSITION, posicao_luz2);
 
-    // Enable light 0 by default
+    // Luz 0 como padrão
     glEnable(GL_LIGHT0);
 }
+// Função Principal
 int main(int argc, char** argv)
 {
     cout << "Qual objeto voce quer renderizar?\n";
     cout << "0 - Elefante\n1 - Casa\n2 - Carro\n3 - Radar\n4 - Urso\n";
+    while (nomeObjeto.empty()) {
+        cin >> resposta;
 
-    cin >> resposta;
-    switch (resposta) {
-    case 0:
-        nomeObjeto = "elepham";
-        break;
-    case 1:
-        nomeObjeto = "mba1";
-        break;
-    case 2:
-        nomeObjeto = "porsche";
-        break;
-    case 3:
-        nomeObjeto = "radar";
-        break;
-    case 4:
-        nomeObjeto = "teddy";
-        break;
+        switch (resposta) {
+        case 0:
+            nomeObjeto = "elepham";
+            break;
+        case 1:
+            nomeObjeto = "mba1";
+            break;
+        case 2:
+            nomeObjeto = "porsche";
+            break;
+        case 3:
+            nomeObjeto = "radar";
+            break;
+        case 4:
+            nomeObjeto = "teddy";
+            break;
+        case 5:
+            nomeObjeto = "PenguinBaseMesh";
+            break;
+        case 99:
+            nomeObjeto = "teste";
+            break;
+        default:
+            cout << "Por favor, escolha uma opção válida." << endl;
+            break;
+        }
+
     }
-
     glutInit(&argc, argv);
+
+    // Define o modo de exibição para usar buffer duplo, RGB e profundidade
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+
+    // Defição da janela
     glutInitWindowSize(800, 450);
     glutInitWindowPosition(20, 20);
     glutCreateWindow("Carregar OBJ");
+
+    // Função caso a janela seja redimensionada
     glutReshapeFunc(reshape);
+
+    // Funções de teclas que serão usadas
     glutKeyboardFunc(keyboard);
     glutMouseWheelFunc(mouse_wheel);
     glutSpecialFunc(keyboard_special);
     glutMouseFunc(mouseButton);
     glutMotionFunc(mouseMotion);
 
+    // Função a ser chamada para renderizar a cena
     glutDisplayFunc(display);
 
-
+    // Função de temporizador para eventos de atualização periódica
     glutTimerFunc(10, timer, 0);
-    Initialize();
 
-    
+    // Inicializar Luz
+    Initialize();  
 
+    // Carrega o objeto a partir do arquivo .obj especificado
     loadObj(objeto, "data/" + nomeObjeto + ".obj");
+
+    // Loop do GLUT
     glutMainLoop();
     return 0;
 

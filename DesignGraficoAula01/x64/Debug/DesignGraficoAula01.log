@@ -1,111 +1,75 @@
 ﻿  DesignGraficoAula01.cpp
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(74,46): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
+  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
+  
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(75,46): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
+  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
+  
 C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(76,46): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(77,46): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(112,25): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(78,46): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(112,74): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(90,26): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(113,25): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(91,26): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(113,74): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(92,26): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(114,25): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(119,26): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(114,74): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(119,70): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
-  
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(120,26): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
-  
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(120,70): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
-  
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(121,26): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
-  
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(121,70): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
-  
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,40): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,79): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,118): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,133): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,94): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,55): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,40): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,68): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,96): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,100): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,72): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,44): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,40): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,79): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,118): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,133): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,94): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,55): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,40): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,68): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,96): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,100): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,72): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,44): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,40): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,79): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,118): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,133): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,94): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,55): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,40): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,68): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,96): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,100): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,72): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,44): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(228,33): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(228,33): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(228,48): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(228,48): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(228,63): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(228,63): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(229,31): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(229,31): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(229,44): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(229,44): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(229,57): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(229,57): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(238,33): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(238,33): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(238,48): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(238,48): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(238,63): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(238,63): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(239,31): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(239,31): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(239,44): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(239,44): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(239,57): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(239,57): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(248,33): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(248,33): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(248,48): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(248,48): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(248,63): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(248,63): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(249,31): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(249,31): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(249,44): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(249,44): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(249,57): warning C4838: a conversão de 'double' em 'GLfloat' requer uma conversão de restrição
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(249,57): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,39): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,83): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,127): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,148): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,104): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(197,60): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,39): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,72): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,105): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,115): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,82): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(198,49): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,39): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,83): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,127): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,148): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,104): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(200,60): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,39): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,72): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,105): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,115): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,82): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(201,49): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,39): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,83): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,127): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,148): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,104): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,60): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,39): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,72): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,105): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,115): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,82): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(204,49): warning C4244: 'argumento': conversão de 'double' para 'GLfloat', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(227,33): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(227,38): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(227,43): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(237,33): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(237,38): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(237,43): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(247,33): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(247,38): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(247,43): warning C4305: 'inicializando': truncamento de 'double' para 'GLfloat'
   DesignGraficoAula01.vcxproj -> C:\Users\berna\source\repos\DesignGraficoAula01\x64\Debug\DesignGraficoAula01.exe
           1 arquivo(s) copiado(s).
