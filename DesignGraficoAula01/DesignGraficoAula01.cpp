@@ -234,7 +234,7 @@ void Initialize() {
     // ativa o cálculo de iluminação OpenGL.
     glEnable(GL_LIGHTING);
     
-
+    // https://www.inf.pucrs.br/~pinho/CG/Aulas/Iluminacao/Ilumina.html
     // Luz 0
     GLfloat luz_ambiente0[] = { 0.8, 0.8, 0.8, 1.0 };
     GLfloat luz_difusa0[] = { 1.0, 1.0, 1.0, 1.0 };

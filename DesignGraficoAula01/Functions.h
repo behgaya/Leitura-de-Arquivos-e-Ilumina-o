@@ -83,6 +83,10 @@ void calcularNormaisVertices(vector<Vertice>& vertices, const vector<Face>& face
             double nx = edge1y * edge2z - edge1z * edge2y;
             double ny = edge1z * edge2x - edge1x * edge2z;
             double nz = edge1x * edge2y - edge1y * edge2x;
+
+            vertices[face.v1].normais.emplace_back(nx, ny, nz);
+            vertices[face.v2].normais.emplace_back(nx, ny, nz);
+            vertices[face.v3].normais.emplace_back(nx, ny, nz);
         }
 
         // Normalizar as normais dos vértices
@@ -185,9 +189,6 @@ void loadObj(Objeto& objeto, string fname)
                 n2 = stoi(tokens2[2]) - 1;
                 n3 = stoi(tokens3[2]) - 1;
             }
-            int actual_n1 = (n1 >= 0 && n1 < normais.size()) ? n1 : 0;
-            int actual_n2 = (n2 >= 0 && n2 < normais.size()) ? n2 : 0;
-            int actual_n3 = (n3 >= 0 && n3 < normais.size()) ? n3 : 0;
 
             faces.emplace_back(v1_index, v2_index, v3_index, n1, n2, n3, t1, t2, t3);
         }

@@ -8,22 +8,31 @@ C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(
 C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(76,46): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(112,25): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(87,26): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(112,74): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(88,26): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(113,25): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(89,26): warning C4244: 'argumento': conversão de 'const double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(113,74): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(116,25): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(114,25): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(116,74): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
-C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(114,74): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(117,25): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
+  
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(117,74): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
+  
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(118,25): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
+  (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
+  
+C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\functions.h(118,74): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
   (compilando o arquivo fonte 'DesignGraficoAula01.cpp')
   
 C:\Users\berna\source\repos\DesignGraficoAula01\DesignGraficoAula01\DesignGraficoAula01.cpp(203,39): warning C4244: 'argumento': conversão de 'double' para 'const unsigned __int64', possível perda de dados
